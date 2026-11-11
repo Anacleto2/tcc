@@ -1,7 +1,7 @@
 
 import tailwindcssAnimate from "tailwindcss-animate";
 
-const config: Config = {
+export default {
   darkMode: ["class"],
 
   content: [
@@ -22,21 +22,8 @@ const config: Config = {
       animation: {
         fadeIn: "fadeIn .5s ease-in-out",
       },
-
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-
-      colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-      },
     },
   },
 
   plugins: [tailwindcssAnimate],
 };
-
-export default config;
