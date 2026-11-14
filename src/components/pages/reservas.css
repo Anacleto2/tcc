@@ -1,0 +1,451 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.reserva-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: Arial, sans-serif;
+  color: #172033;
+}
+
+/* CABEÇALHO */
+
+.reserva-header {
+  height: 75px;
+  padding: 0 4%;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reserva-logo {
+  color: #0875ed;
+  font-size: 23px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.reserva-header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.reserva-header nav a {
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.reserva-header nav .btn-cadastro {
+  background: #0875ed;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+}
+
+/* LAYOUT PRINCIPAL */
+
+.reserva-layout {
+  max-width: 1300px;
+  margin: 45px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 2fr 0.95fr;
+  align-items: start;
+  gap: 30px;
+}
+
+.reserva-main,
+.reserva-resumo {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.reserva-main > h2 {
+  font-size: 25px;
+  margin: 0 0 35px;
+}
+
+.reserva-section {
+  margin-bottom: 32px;
+}
+
+.reserva-section h3 {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.assento-descricao {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* CAMPOS */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 17px;
+  flex: 1;
+  min-width: 0;
+}
+
+.campo label {
+  font-size: 14px;
+  margin-bottom: 9px;
+  font-weight: 500;
+}
+
+.campo input {
+  width: 100%;
+  height: 43px;
+  padding: 10px 13px;
+  border: 1px solid #d5d5d5;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+.campo input:focus {
+  border-color: #0875ed;
+  box-shadow: 0 0 0 2px rgba(8,117,237,0.1);
+}
+
+.campos-duplos {
+  display: flex;
+  gap: 15px;
+}
+
+/* LEGENDA DOS ASSENTOS */
+
+.assento-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 22px 0;
+  font-size: 13px;
+}
+
+.assento-legenda span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.assento-legenda i {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.legenda-disponivel {
+  background: #e8f7ed;
+  border: 1px solid #36a567;
+}
+
+.legenda-selecionado {
+  background: #0875ed;
+}
+
+.legenda-ocupado {
+  background: #d1d5db;
+}
+
+/* AUTOCARRO */
+
+.autocarro {
+  max-width: 460px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: 65px 65px 20px 20px;
+}
+
+.autocarro-frente {
+  height: 65px;
+  border-bottom: 2px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.mapa-assentos {
+  padding: 22px 5px;
+}
+
+.fila-assentos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 13px;
+}
+
+.numero-fila {
+  width: 18px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.grupo-assentos {
+  display: flex;
+  gap: 8px;
+}
+
+.corredor {
+  width: 28px;
+}
+
+.assento {
+  width: 42px;
+  height: 43px;
+  border-radius: 9px 9px 5px 5px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.assento.disponivel {
+  background: #e8f7ed;
+  color: #188348;
+  border-color: #36a567;
+}
+
+.assento.disponivel:hover {
+  background: #c9efd7;
+  transform: translateY(-2px);
+}
+
+.assento.selecionado {
+  background: #0875ed;
+  color: white;
+  border-color: #0875ed;
+  box-shadow: 0 2px 7px rgba(8,117,237,0.25);
+}
+
+.assento.ocupado {
+  background: #d1d5db;
+  color: #777;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.autocarro-fundo {
+  text-align: center;
+  padding: 14px;
+  border-top: 2px dashed #cbd5e1;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: bold;
+}
+
+/* ASSENTOS ESCOLHIDOS */
+
+.assentos-escolhidos {
+  padding: 15px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #0756a5;
+  font-size: 14px;
+}
+
+/* ERROS E BOTÃO */
+
+.reserva-erro {
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+.btn-confirmar {
+  width: 100%;
+  padding: 15px;
+  background: #0875ed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-confirmar:hover {
+  background: #055fc4;
+}
+
+/* RESUMO */
+
+.reserva-resumo {
+  position: sticky;
+  top: 20px;
+}
+
+.reserva-resumo h3 {
+  margin-top: 0;
+  font-size: 17px;
+}
+
+.imagem-destino {
+  height: 190px;
+  margin: 28px 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #063b71, #0875ed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem-destino-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 35px;
+}
+
+.imagem-destino-texto span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.reserva-resumo h2 {
+  font-size: 21px;
+}
+
+.localizacao {
+  color: #777;
+  font-size: 14px;
+}
+
+.resumo-detalhes {
+  border-top: 1px solid #ddd;
+  margin-top: 25px;
+  padding-top: 15px;
+}
+
+.resumo-detalhes div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.resumo-detalhes span {
+  color: #777;
+}
+
+.resumo-detalhes strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.resumo-total {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 19px;
+}
+
+.resumo-total strong:last-child {
+  color: #0875ed;
+}
+
+.resumo-nota {
+  background: #f5f6f8;
+  color: #64748b;
+  padding: 14px;
+  border-radius: 9px;
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+  .reserva-layout {
+    grid-template-columns: 1fr;
+    margin: 25px auto;
+  }
+
+  .reserva-resumo {
+    position: static;
+  }
+}
+
+@media (max-width: 550px) {
+  .reserva-header {
+    padding: 12px 15px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .reserva-header nav {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .reserva-header nav a {
+    font-size: 12px;
+  }
+
+  .reserva-layout {
+    padding: 0 10px;
+  }
+
+  .reserva-main,
+  .reserva-resumo {
+    padding: 18px;
+  }
+
+  .campos-duplos {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .autocarro {
+    padding: 12px 5px;
+  }
+
+  .fila-assentos {
+    gap: 5px;
+  }
+
+  .grupo-assentos {
+    gap: 5px;
+  }
+
+  .assento {
+    width: 34px;
+    height: 38px;
+  }
+
+  .corredor {
+    width: 15px;
+  }
+}
